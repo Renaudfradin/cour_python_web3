@@ -31,7 +31,8 @@ try:
             response = requests.get(url, params=params)
             jsonResponse = response.json()
             textResponse = response.text
-            if "items" in textResponse:
+            print(jsonResponse)
+            if "items" in jsonResponse:
                 for items in jsonResponse['items']:
                     if "title" in items['volumeInfo']:
                         print(items['volumeInfo']['title'])
